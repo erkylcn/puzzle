@@ -1,17 +1,17 @@
 package com.eigames.games.puzzle;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Game implements IGame {
-	private int stepCount;
 	private Board board;
+	private int stepCount;
 	private ImagePart emptyImagePart;
+	private Options gameOptions;
 	private List<GameListener> listeners = new ArrayList<>();
 
-	public Game(int n, int m) {
-		board = new Board(n, m);
+	public Game(Options options) {
+		board = new Board(options.getSelectedBoardSize().getN(), options.getSelectedBoardSize().getM());
 		init();
 	}
 
@@ -27,7 +27,7 @@ public class Game implements IGame {
 			ipList.add(new ImagePart("", i));
 		}
 
-		Collections.shuffle(ipList);
+		// Collections.shuffle(ipList);
 
 		for (int x = 0; x < board.getN(); x++) {
 			for (int y = 0; y < board.getM(); y++) {

@@ -16,7 +16,7 @@ public class ImageUtil implements ActionListener {
 	}
 
 	public static void crop(int n, int m, String url) throws IOException {
-		BufferedImage image = ImageIO.read(ImageUtil.class.getResource(url));
+		BufferedImage image = ImageIO.read(new File(url));
 		int height = image.getHeight();
 		int width = image.getWidth();
 		int croppedHeight = height / n;
@@ -27,7 +27,7 @@ public class ImageUtil implements ActionListener {
 				BufferedImage crop = new BufferedImage(croppedWidth, croppedHeight, BufferedImage.TYPE_INT_RGB);
 				Graphics g = crop.createGraphics();
 				g.drawImage(img, 0, 0, null);
-				File outputfile = new File((x * m + y) + ".png");
+				File outputfile = new File("images/ei/" + (x * m + y) + ".png");
 				ImageIO.write(crop, "png", outputfile);
 			}
 		}
