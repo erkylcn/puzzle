@@ -1,6 +1,7 @@
 package com.eigames.games.puzzle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Game implements IGame {
@@ -27,7 +28,7 @@ public class Game implements IGame {
 			ipList.add(new ImagePart("", i));
 		}
 
-		// Collections.shuffle(ipList);
+		Collections.shuffle(ipList);
 
 		for (int x = 0; x < board.getN(); x++) {
 			for (int y = 0; y < board.getM(); y++) {

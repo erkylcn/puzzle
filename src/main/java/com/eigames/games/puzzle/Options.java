@@ -31,7 +31,7 @@ public class Options {
 	}
 
 	public enum BoardSize {
-		X33(3, 3, "3X3"), X34(3, 4, "3X4"), X44(4, 4, "4X4");
+		X33(3, 3, "3X3"), X34(3, 4, "3X4"), X44(4, 4, "4X4"), X45(4, 5, "4X5"), X55(5, 5, "5X5"), X2020(20, 20, "20X20");
 
 		int n;
 		int m;

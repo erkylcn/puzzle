@@ -1,19 +1,29 @@
 package com.eigames.games.puzzle;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 
-import com.eigames.games.gui.GameWindow;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class GameController implements ActionListener {
+public class GameController extends JFrame {
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		frame.getContentPane().setLayout(new BorderLayout());
 
-	public GameController(GameWindow wiew, Game game) {
-		GameWindow view = new GameWindow(new Game(3, 3));
-	}
+		JPanel green = new JPanel();
+		green.setPreferredSize(new Dimension(80, 150));
+		green.setBackground(Color.GREEN);
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		JPanel yellow = new JPanel();
+		yellow.setBackground(Color.YELLOW);
 
+		frame.getContentPane().add(green, BorderLayout.PAGE_START);
+		frame.getContentPane().add(yellow, BorderLayout.CENTER);
+
+		frame.pack();
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }

@@ -11,9 +11,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class ImageUtil implements ActionListener {
-	public static void main(String... strings) throws IOException {
-		ImageUtil.crop(3, 3, "/images/image1/bmw.jpg");
-	}
 
 	public static void crop(int n, int m, String url) throws IOException {
 		BufferedImage image = ImageIO.read(new File(url));
